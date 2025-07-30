@@ -1,0 +1,56 @@
+#OutletPage{
+    height: 100%;
+    width: 100%;
+}
+
+.light{
+    color: var(--black-color);
+    background-color: var(--white-color);
+}
+
+.dark{
+    color: var(--white-color);
+    background-color: var(--black-color);
+}
+
+#header{
+    height: 10%;
+    width: 100%;
+    display: flex; 
+}
+
+#content{
+    height: 90%;
+    width: 100%;
+}
+
+/* .headerContainer{
+    height: 100%;
+    width: 50%;
+    background-color: red;
+} */
+
+.leftHeaderContainer{
+    display: flex;
+    height: 100%;
+    width: 96%;
+    justify-content: center;
+}
+
+.rightHeaderContainer{
+    height: 100%;
+    width: 4%;
+    display: flex;
+    justify-content: end;
+}
+
+#toggle{
+    cursor:none;
+}
+
+@media screen and (min-width:430px) {
+    .leftHeaderContainer{
+        font-size: xx-large;
+        font-weight: bold;
+    }
+}

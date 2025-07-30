@@ -1,0 +1,42 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight:600;
+  font-size:larger;
+  text-align: center;
+
+  /* color-scheme: light dark; */
+  --black-color:black;
+  --white-color:white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  text-decoration:line-through;
+  font-size:x-large;
+  font-weight: bolder;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  transition: all 0s ease-in-out;
+  /* box-sizing: border-box; */
+}
+
+
+
+body{
+  height: 100vh;
+  max-height: auto;
+  width: 100vw;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+}
