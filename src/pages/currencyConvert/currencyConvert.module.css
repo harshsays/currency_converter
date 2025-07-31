@@ -5,9 +5,20 @@
 }
 
 #Container{
-    height: 50%;
+    height: 60%;
     max-height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.convertBtn {
+  padding: 0.7rem;
+  background-color: var(--black-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  /* transition: background-color 0.3s ease; */
 }
