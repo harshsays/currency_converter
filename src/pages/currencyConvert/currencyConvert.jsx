@@ -13,9 +13,12 @@ function CurrencyConvert(){
             <div id={styles.Container}>
                 <Form means={means}></Form>
             </div>
-            <button onClick={()=>chngeMeans("name")}>Search By Currency name</button>
+            <div style={{marginTop:"5rem"}}>
+                <button onClick={()=>chngeMeans("name")}>Search By Currency name</button>
             <button onClick={()=>chngeMeans("code")}>Search By currency code</button>
             <button onClick={()=>chngeMeans("country")}>Search By Country name</button>
+            </div>
+            
         </div>
     )
 }
