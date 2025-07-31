@@ -1,17 +1,23 @@
 import styles from "./form.module.css";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 import currencyCode from "../../StaticData/currencyCodeNames";
 
 function Form({ means }) {
-  const [code] = useState(currencyCode);
+  const color=useSelector((state)=>(state.toggle.color))
+  const [code,setCode] = useState(currencyCode);
+
+  function onSubmit(e){
+    
+  }
 
   return (
-    <div id={styles.formContainer}>
-      <form className={styles.currencyForm}>
+    <div id={styles.formContainer} >
+      <form className={styles.currencyForm} onSubmit={(e)=>onSubmit(e)}>
         <div className={styles.dropdownGroup}>
           <div className={styles.selectWrapper}>
             <label >From</label>
-            <select>
+            <select name="from">
               {code.map((value, index) => (
                 <option key={index}>{value[means]}</option>
               ))}
@@ -20,7 +26,7 @@ function Form({ means }) {
 
           <div className={styles.selectWrapper}>
             <label>To</label>
-            <select>
+            <select name="to">
               {code.map((value, index) => (
                 <option key={index}>{value[means]}</option>
               ))}
