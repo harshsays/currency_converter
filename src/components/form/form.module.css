@@ -1,0 +1,62 @@
+#formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.currencyForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: var(--black-color);
+}
+
+.dropdownGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.selectWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.selectWrapper label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.selectWrapper select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.amountInput {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.convertBtn {
+  padding: 0.7rem;
+  background-color: var(--black-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.convertBtn:hover {
+  background-color: #0056b3;
+}

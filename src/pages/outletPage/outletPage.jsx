@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 import moon from "../../assets/moon.svg"
 import sun from "../../assets/sun.svg";
 import styles from "./outletPage.module.css";
-import DefaultPage from "../defaultPage/DefaultPage";
+import DefaultPage from "../../components/defaultPage/DefaultPage";
 import { useLocation } from "react-router";
 import { useState } from "react";
 

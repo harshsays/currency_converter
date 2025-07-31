@@ -11,7 +11,7 @@ function App(){
     ]},
     {path:"*",element:<NotFound></NotFound>}
   ])
-  90
+  
   return (
     <>
     <div id="app">

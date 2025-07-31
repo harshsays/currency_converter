@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Default.module.css";
-import defaultData from "./DefaultPageContent";
+import defaultData from "../../StaticData/DefaultPageContent";
 import { Link } from "react-router";
 
 
