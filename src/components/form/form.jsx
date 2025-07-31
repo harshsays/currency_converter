@@ -35,7 +35,7 @@ function Form({ means }) {
         </div>
 
         <input type="number" placeholder="Enter amount" className={styles.amountInput} />
-        <button type="submit" className={styles.convertBtn}>Convert</button>
+        <button type="submit" style={{backgroundColor:`${color.FONT_COLOR }`, color:`${color.BG_COLOR}`}} className={styles.convertBtn}>Convert</button>
       </form>
     </div>
   );
