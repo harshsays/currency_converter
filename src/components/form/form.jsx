@@ -4,40 +4,42 @@ import { useEffect, useState } from "react";
 import currencyCode from "../../StaticData/currencyCodeNames";
 
 function Form({ means }) {
+
   const color = useSelector((state) => state.toggle.color);
-  const [formData, setFormData] = useState({ from: "AED", to: "AED", amount: undefined });
+  const [formData, setFormData] = useState({ from: "AED", to: "AED", amount: "empty" });
   const [answer,setAnswer]=useState("")
   const [submit, setSubmit] = useState(true);
   const [code, setCode] = useState(currencyCode);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { from, to, amount } = formData;
-        const response = await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bdc07bff/pair/${from}/${to}/${amount}`);
-
-        const data = await response.json();
-        
-        if (data.result === "success") {
-          // console.log("Conversion Result:", data.conversion_result);
-          // Optionally: show result in UI
-          setFormData(pre => ({...pre , amount: undefined}))
-          setAnswer(data.conversion_result)
-        } else {
-          // console.error("Error fetching conversion:", data.error_type || data);
-          setAnswer("There is some Problem ! try again later")
+  useEffect(()=>{
+    async function getData(){
+      try{
+        const {from,to,amount}=formData;
+        if(amount==="empty"){
+          return ;
         }
-      } catch (error) {
-        console.error("Network Error:", error);
+        const response= await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bdc07bff/pair/${from}/${to}/${amount}`);
+        const data= await response.json();
+        if(data.result==="success"){
+          setAnswer(data.conversion_result);
+        }else{
+          setAnswer("Something Wrong . Try later");
+        }
+      }catch(err){
+        return;
       }
-    };
+    }
+    getData();
+  },[submit])
 
-    fetchData();
-  }, [submit]); // Runs every time `submit` is toggled
+  function handleSubmit(e){
+    e.preventDefault();
+    setSubmit(!submit);
+  }
 
   return (
     <div id={styles.formContainer}>
-      <form className={styles.currencyForm} onSubmit={(e)=>e.preventDefault()}>
+      <form className={styles.currencyForm} onSubmit={(e)=> handleSubmit(e)}>
         <div className={styles.dropdownGroup}>
           <div className={styles.selectWrapper}>
             <label>From</label>
@@ -77,8 +79,7 @@ function Form({ means }) {
           className={styles.amountInput}
         />
         <button
-          type="button"
-          onClick={() => setSubmit(!submit)}
+          type="submit"
           style={{ backgroundColor: `${color.FONT_COLOR}`, color: `${color.BG_COLOR}` }}
           className={styles.convertBtn}
         >
