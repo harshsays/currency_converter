@@ -1,4 +1,5 @@
 import styles from "./form.module.css";
+import Loading from "../loading/loading";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import currencyCode from "../../StaticData/currencyCodeNames";
@@ -18,6 +19,7 @@ function Form({ means }) {
         if(amount==="empty"){
           return ;
         }
+        setAnswer(null);
         const response= await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bdc07bff/pair/${from}/${to}/${amount}`);
         const data= await response.json();
         if(data.result==="success"){
@@ -85,7 +87,7 @@ function Form({ means }) {
         >
           Convert
         </button>
-        <span>{answer}</span>
+        {answer!=null?<span>{answer}</span>:<Loading></Loading>}
       </form>
       
     </div>
