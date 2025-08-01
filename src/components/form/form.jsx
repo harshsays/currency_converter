@@ -17,7 +17,7 @@ function Form({ means }) {
         <div className={styles.dropdownGroup}>
           <div className={styles.selectWrapper}>
             <label >From</label>
-            <select name="from">
+            <select name="from" className={styles.select}>
               {code.map((value, index) => (
                 <option key={index}>{value[means]}</option>
               ))}
@@ -26,7 +26,7 @@ function Form({ means }) {
 
           <div className={styles.selectWrapper}>
             <label>To</label>
-            <select name="to">
+            <select name="to" className={styles.select}>
               {code.map((value, index) => (
                 <option key={index}>{value[means]}</option>
               ))}
