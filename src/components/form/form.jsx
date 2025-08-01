@@ -5,7 +5,7 @@ import currencyCode from "../../StaticData/currencyCodeNames";
 
 function Form({ means }) {
   const color = useSelector((state) => state.toggle.color);
-  const [formData, setFormData] = useState({ from: "AED", to: "AED", amount: 0 });
+  const [formData, setFormData] = useState({ from: "AED", to: "AED", amount: undefined });
   const [answer,setAnswer]=useState("")
   const [submit, setSubmit] = useState(true);
   const [code, setCode] = useState(currencyCode);
@@ -14,16 +14,18 @@ function Form({ means }) {
     const fetchData = async () => {
       try {
         const { from, to, amount } = formData;
-        const response = await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bdc07bff/pair/${from}/${to}/${amount}`);
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bd07bff/pair/${from}/${to}/${amount}`);
 
         const data = await response.json();
-        setFormData(pre => ({...pre , amount:0}))
-        setAnswer(data.conversion_result)
+        
         if (data.result === "success") {
           // console.log("Conversion Result:", data.conversion_result);
           // Optionally: show result in UI
+          setFormData(pre => ({...pre , amount: undefined}))
+          setAnswer(data.conversion_result)
         } else {
           // console.error("Error fetching conversion:", data.error_type || data);
+          setAnswer("There is some Problem ! try again later")
         }
       } catch (error) {
         console.error("Network Error:", error);
