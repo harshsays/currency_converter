@@ -14,7 +14,7 @@ function Form({ means }) {
     const fetchData = async () => {
       try {
         const { from, to, amount } = formData;
-        const response = await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bd07bff/pair/${from}/${to}/${amount}`);
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bdc07bff/pair/${from}/${to}/${amount}`);
 
         const data = await response.json();
         
