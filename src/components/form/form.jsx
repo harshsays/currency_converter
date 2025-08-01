@@ -16,17 +16,16 @@ function Form({ means }) {
     async function getData(){
       try{
         const {from,to,amount}=formData;
+
         if(amount==="empty"){
           return ;
         }
-        setAnswer(null);
+        
+       setAnswer(null)
+
         const response= await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bdc07bff/pair/${from}/${to}/${amount}`);
         const data= await response.json();
-        if(data.result==="success"){
-          setAnswer(data.conversion_result);
-        }else{
-          setAnswer("Something Wrong . Try later");
-        }
+        data.result==="success"?setAnswer(data.conversion_result):setAnswer("Something Wrong . Try later")
       }catch(err){
         return;
       }
@@ -73,7 +72,7 @@ function Form({ means }) {
         </div>
 
         <input
-          value={formData.amount}
+          
           onChange={(e) => setFormData((prev) => ({ ...prev, amount: e.target.value }))}
           type="number"
           name="amount"
