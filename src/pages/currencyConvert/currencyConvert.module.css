@@ -13,7 +13,8 @@
 }
 
 .convertBtn {
-  padding: 0.7rem;
+  /* padding: 0.7rem; */
+  margin: 0.7rem;
   background-color: var(--black-color);
   color: white;
   border: none;
