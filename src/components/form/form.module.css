@@ -47,6 +47,28 @@
   font-size: 1rem;
 }
 
+/* .convertBtn {
+  padding: 0.7rem;
+  background-color: var(--black-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer; */
+  /* transition: transform 3s ease-in-out; */
+  /* transition: background-color 0.3s ease; */
+
+
+/* .convertBtn:hover {
+  background-color: rgb(89, 23, 23);
+} */
+
+
+/* .convertBtn:active{
+  transform: translateZ(3px) scaleX();
+
+} */
+
 .convertBtn {
   padding: 0.7rem;
   background-color: var(--black-color);
@@ -55,19 +77,18 @@
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  /* transition: background-color 0.3s ease; */
+  transition: transform 0.2s ease-in-out;
 }
 
 .convertBtn:hover {
-  background-color: rgb(89, 23, 23);
+  transform: translateY(-2px);
+}
+
+.convertBtn:active {
+  transform: translateY(0);
 }
 
 
-@media screen and (min-width:430px) {
-  .currencyForm {
-  width: 50%;
-}
-}
 
 @media screen and (max-width:430px) {
   .select{

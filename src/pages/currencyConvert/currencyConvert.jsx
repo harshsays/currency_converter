@@ -17,9 +17,9 @@ function CurrencyConvert(){
                 <Form means={means}></Form>
             </div>
             <div style={{marginTop:"5rem"}}>
-            <button className={styles.convertBtn} style={{backgroundColor:`${color.BG_COLOR }`, color:`${color.FONT_COLOR}`}} onClick={()=>chngeMeans("name")}>Search By Currency name</button>
-            <button className={styles.convertBtn} style={{backgroundColor:`${color.BG_COLOR }`, color:`${color.FONT_COLOR}`}} onClick={()=>chngeMeans("code")}>Search By currency code</button>
-            <button className={styles.convertBtn} style={{backgroundColor:`${color.BG_COLOR }`, color:`${color.FONT_COLOR}`}} onClick={()=>chngeMeans("country")}>Search By Country name</button>
+            <button className={styles.convertBtn} style={{backgroundColor:`${color.BG_COLOR }`, color:`${color.FONT_COLOR}`}} onClick={()=>chngeMeans("name")}>Search By Currency Name</button>
+            <button className={styles.convertBtn} style={{backgroundColor:`${color.BG_COLOR }`, color:`${color.FONT_COLOR}`}} onClick={()=>chngeMeans("code")}>Search By Currency Code</button>
+            <button className={styles.convertBtn} style={{backgroundColor:`${color.BG_COLOR }`, color:`${color.FONT_COLOR}`}} onClick={()=>chngeMeans("country")}>Search By Country Name</button>
             </div>
             
         </div>

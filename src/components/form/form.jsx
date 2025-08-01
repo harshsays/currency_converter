@@ -8,7 +8,10 @@ function Form({ means }) {
   const [code,setCode] = useState(currencyCode);
 
   function onSubmit(e){
-    
+    e.preventDefault();
+    console.log(e.target.from.value)
+    console.log(e.target.to.value)
+    console.log(e.target.amount.value)
   }
 
   return (
@@ -34,7 +37,7 @@ function Form({ means }) {
           </div>
         </div>
 
-        <input type="number" placeholder="Enter amount" className={styles.amountInput} />
+        <input type="number" name="amount" placeholder="Enter amount" className={styles.amountInput} />
         <button type="submit" style={{backgroundColor:`${color.FONT_COLOR }`, color:`${color.BG_COLOR}`}} className={styles.convertBtn}>Convert</button>
       </form>
     </div>
