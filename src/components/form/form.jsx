@@ -37,7 +37,7 @@ function Form({ means }) {
 
   return (
     <div id={styles.formContainer}>
-      <form className={styles.currencyForm}>
+      <form className={styles.currencyForm} onSubmit={(e)=>e.preventDefault()}>
         <div className={styles.dropdownGroup}>
           <div className={styles.selectWrapper}>
             <label>From</label>
