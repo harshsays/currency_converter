@@ -19,6 +19,7 @@
 
 .dropdownGroup {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   gap: 1rem;
 }
@@ -37,6 +38,7 @@
 .selectWrapper select {
   padding: 0.5rem;
   border-radius: 6px;
+  width: 100%;
   border: 1px solid #ccc;
 }
 
