@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import currencyCode from "../../StaticData/currencyCodeNames";
 
 function Form({ means }) {
-
   const color = useSelector((state) => state.toggle.color);
   const [formData, setFormData] = useState({ from: "AED", to: "AED", amount: "empty" });
+  const [index,setIndex]=useState({from :"",to:""});
   const [answer,setAnswer]=useState("")
   const [submit, setSubmit] = useState(true);
   const [code, setCode] = useState(currencyCode);
@@ -20,10 +20,10 @@ function Form({ means }) {
         if(amount==="empty"){
           return ;
         }
+
         
        setAnswer(null)
-
-        const response= await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bdc07bff/pair/${from}/${to}/${amount}`);
+        const response= await fetch(`https://v6.exchangerate-api.com/v6/a0edccc2e622ba01bdc07bff/pair/${currencyCode[index.from].code}/${currencyCode[index.to].code}/${amount}`);
         const data= await response.json();
         data.result==="success"?setAnswer(data.conversion_result):setAnswer("Something Wrong . Try later")
       }catch(err){
@@ -35,6 +35,7 @@ function Form({ means }) {
 
   function handleSubmit(e){
     e.preventDefault();
+    setIndex({from:e.target.from.selectedIndex,to:e.target.to.selectedIndex})
     setSubmit(!submit);
   }
 
@@ -51,7 +52,7 @@ function Form({ means }) {
               className={styles.select}
             >
               {code.map((value, index) => (
-                <option key={index}>{value[means]}</option>
+                <option   key={index}>{ value[means]}</option>
               ))}
             </select>
           </div>
